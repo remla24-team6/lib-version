@@ -30,4 +30,4 @@ jobs:
       - name: Build and publish
         run: |
           poetry build
-          poetry publish -r test-pypi
+          poetry publish
