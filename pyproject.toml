@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "lib-version-remla-6"
+name = "versioning-remla"
 version = "0.0.0"
 description = "A version-aware PyPi package."
 authors = ["Adit Whorra <aditwhorra@gmail.com>"]
