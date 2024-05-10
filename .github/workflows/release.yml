@@ -13,7 +13,7 @@ jobs:
           echo "version=$VERSION" >> $GITHUB_ENV
       - name: Save version info in resources/version.txt
         run: |
-          echo ${{ env.version }} > resources/version.txt
+          echo -n ${{ env.version }} > resources/version.txt
       - name: Set up Python 3.8
         uses: actions/setup-python@v2
         with:
