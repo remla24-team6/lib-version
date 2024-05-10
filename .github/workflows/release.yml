@@ -13,7 +13,7 @@ jobs:
           echo "version=$VERSION" >> $GITHUB_ENV
       - name: Save version info in resources/version.txt
         run: |
-          echo "$VERSION" > resources/version.txt
+          echo ${{ env.version }} > resources/version.txt
       - name: Set up Python 3.8
         uses: actions/setup-python@v2
         with:
@@ -27,7 +27,7 @@ jobs:
           poetry config repositories.test-pypi https://test.pypi.org/legacy/
           poetry config pypi-token.test-pypi ${{ secrets.TEST_PY_TOKEN }}
       - name: Bump poetry version
-        run: poetry version "$VERSION"
+        run: poetry version ${{ env.version }}
       - name: Build and publish
         run: |
           poetry build
