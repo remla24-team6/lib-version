@@ -32,6 +32,6 @@ jobs:
         run: |
           poetry config repositories.test-pypi https://test.pypi.org/legacy/
           poetry config pypi-token.test-pypi ${{ secrets.TEST_PY_TOKEN }}
-          poetry version $VERSION
+          poetry version "$VERSION"
           poetry build
           poetry publish -r test-pypi
